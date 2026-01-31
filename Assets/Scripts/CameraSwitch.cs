@@ -7,7 +7,7 @@ public class CameraSwitch : MonoBehaviour
     public CinemachineVirtualCamera _cockpitCam;
     public CinemachineVirtualCamera _thirdPersonCam;
     public CinemachineBlendListCamera _cinematicCam;
-    public float _idleTime = 5f;
+    public float _idleTime = 8f;
     private float _idleTimer;
     private bool _cinematicActive;
     private int _currentCam; 

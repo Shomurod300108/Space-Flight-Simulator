@@ -24,8 +24,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         _currentSpeed = _defaultForwardSpeed;
-        _introCutSceneDirector = GameObject.Find("IntroCutScene").GetComponent<PlayableDirector>();
-        _introCutSceneDirector.stopped += OnIntroFinished; 
+        
+        if (_introCutSceneDirector != null)
+        {
+            _introCutSceneDirector.stopped += OnIntroFinished;
+        }
+        else
+        {
+            Debug.LogError("Intro PlayableDirector is NOT assigned");
+        }
     }
 
     void Update()
