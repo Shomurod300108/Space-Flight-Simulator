@@ -20,11 +20,13 @@ public class Player : MonoBehaviour
     private float _yaw;
     private float _roll;
     private bool _canControlShip = false;
+    private Rigidbody rb;
 
     void Start()
     {
         _currentSpeed = _defaultForwardSpeed;
         
+
         if (_introCutSceneDirector != null)
         {
             _introCutSceneDirector.stopped += OnIntroFinished;
@@ -82,6 +84,29 @@ public class Player : MonoBehaviour
     {
         _canControlShip = true;
         _introCutSceneCam.Priority = 0;
+    }
+
+    public void AttachToTransport(Transform parent)
+    {
+        _canControlShip = false;
+
+        transform.SetParent(parent, true);
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        rb.isKinematic =true;
+    }
+
+    public void DisableControl()
+    {
+        _canControlShip = false;
+
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        Debug.Log("Player control disabled (docking)");
     }
 
     private void OnDestroy()
