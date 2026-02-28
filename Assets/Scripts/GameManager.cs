@@ -1,27 +1,44 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _restartButton;
+    private bool _gameHasEnded = false;
+
     void Update()
     {
-        // Press Escape to quit the game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             QuitGame();
         }
     }
 
-    void QuitGame()
+    public void OnCompletion()
     {
-        #if UNITY_EDITOR
-            // Stop play mode in the editor
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            // Quit the build
-            Application.Quit();
-        #endif
+        if (_gameHasEnded) return;
 
-        Debug.Log("Game Quit!");
+        _gameHasEnded = true;
+
+        _restartButton.SetActive(true);       
+        Debug.Log("Completion reached → Restart button is now visible");
+    }
+
+    public void RestartSimulator()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    private void QuitGame()  
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+
+        Debug.Log("Game Quit requested!");
     }
 }
 

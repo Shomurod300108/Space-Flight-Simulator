@@ -88,13 +88,11 @@ public class Player : MonoBehaviour
 
     public void AttachToTransport(Transform parent)
     {
-        _canControlShip = false;
+    transform.SetParent(parent, true);
 
-        transform.SetParent(parent, true);
-
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
-        rb.isKinematic =true;
+    Rigidbody rb = GetComponent<Rigidbody>();
+    if (rb != null)
+        rb.isKinematic = true;
     }
 
     public void DisableControl()

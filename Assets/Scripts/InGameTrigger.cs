@@ -3,52 +3,41 @@ using UnityEngine.Playables;
 
 public class InGameTrigger : MonoBehaviour
 {
-    [Header("References (Assign in Inspector)")]
-    [SerializeField] private Player player;  // Not used here anymore, but keep if needed elsewhere
-    [SerializeField] private GameObject transportShip;  // Root GO
-    // Removed: inGameDirector — moved to DockingTrigger
-    // Note: PlayableDirector should now be assigned to transportShip's DockingTrigger script
+    [SerializeField] private GameObject _transportShip;      
+    [SerializeField] private PlayableDirector _inGameDirector; 
 
-    private Renderer[] renderers;
-    private bool played = false;  // Repurposed: now for spawn only
+    private bool _hasTriggered = false;
 
-    private void Start()
+    private void Awake()
     {
-        if (transportShip == null) 
-        {
-            Debug.LogError("Transport ship reference is null!", this);
-            return;
-        }
+        if (_transportShip != null)
+            _transportShip.SetActive(false);  
 
-        // Ensure root is active (for Timeline later)
-        transportShip.SetActive(true);
-        
-        // Hide via renderers only
-        renderers = transportShip.GetComponentsInChildren<Renderer>(true);
-        foreach (var r in renderers)
+        if (_inGameDirector != null)
         {
-            if (r != null) r.enabled = false;
+            _inGameDirector.gameObject.SetActive(false);  
         }
-
-        // Optional: Position transport above trigger/player if needed
-        // transportShip.transform.position = transform.position + Vector3.up * 50f;  // Adjust height
+        else
+        {
+            Debug.LogError("PlayableDirector not assigned in InGameTrigger!", this);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (played || !other.CompareTag("Player")) return;
-        played = true;
+        if (_hasTriggered || !other.CompareTag("Player"))
+            return;
 
-        // 1. Enable visibility
-        foreach (var r in renderers)
+        _hasTriggered = true;
+
+        if (_transportShip != null)
+            _transportShip.SetActive(true); 
+
+        if (_inGameDirector != null)
         {
-            if (r != null) r.enabled = true;
+            _inGameDirector.gameObject.SetActive(true);
+            _inGameDirector.Play();  
+            Debug.Log("Cutscene started via trigger");
         }
-
-        // 2. Enable docking detection (if using collider method — see below)
-        // DockingTrigger will handle attach + Timeline
-
-        Debug.Log("Transport spawned — fly to docking zone above it!");
     }
 }
-
