@@ -11845,8 +11845,10 @@ struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6  : public MonoBehav
 {
 	// UnityEngine.GameObject GameManager::_restartButton
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____restartButton_4;
+	// UnityEngine.Playables.PlayableDirector GameManager::_finalTimeline
+	PlayableDirector_t895D7BC3CFBFFD823278F438EAC4AA91DBFEC475* ____finalTimeline_5;
 	// System.Boolean GameManager::_gameHasEnded
-	bool ____gameHasEnded_5;
+	bool ____gameHasEnded_6;
 };
 
 // Cinemachine.GroupWeightManipulator
@@ -12064,6 +12066,21 @@ struct TimelineChain_tAB499EB8E88C6E1EB815E97EEF073020090C7E7D  : public MonoBeh
 // UnityEngine.EventSystems.UIBehaviour
 struct UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
+};
+
+// VcamLayerController
+struct VcamLayerController_t95EE594B670721E8B08A21F87998A4D3A4157D0F  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// UnityEngine.Camera VcamLayerController::_mainCamera
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____mainCamera_4;
+	// Cinemachine.CinemachineVirtualCamera VcamLayerController::_exteriorVcam
+	CinemachineVirtualCamera_t7BAD867E24FA315D28917EE318CE7D7258C4CD50* ____exteriorVcam_5;
+	// Cinemachine.CinemachineVirtualCamera VcamLayerController::_interiorVcam
+	CinemachineVirtualCamera_t7BAD867E24FA315D28917EE318CE7D7258C4CD50* ____interiorVcam_6;
+	// UnityEngine.GameObject VcamLayerController::_cockpitRoot
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____cockpitRoot_7;
+	// System.Boolean VcamLayerController::_isInteriorView
+	bool ____isInteriorView_8;
 };
 
 // UnityEngine.UI.Dropdown/DropdownItem
@@ -17294,6 +17311,10 @@ struct AnimationTrack_tBE37C239976A84F0A2E6BA3B77263B4F44BB1359_StaticFields
 
 // TimelineChain
 
+// VcamLayerController
+
+// VcamLayerController
+
 // UnityEngine.UI.Dropdown/DropdownItem
 
 // UnityEngine.UI.Dropdown/DropdownItem
@@ -19784,27 +19805,30 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4072[5] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4074[1] = 
 {
 	static_cast<int32_t>(offsetof(XRDevice_tD076A68EFE413B3EEEEA362BE0364A488B58F194_StaticFields, ___deviceLoaded_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4083[3] = 
-{
-	static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_nTag_0)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_aValue_1)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___elist_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4088[9] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4083[9] = 
 {
 	static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____cockpitCam_4)),static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____thirdPersonCam_5)),static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____cinematicCam_6)),static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____idleTime_7)),static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____idleTimer_8)),static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____cinematicActive_9)),static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____currentCam_10)),static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____introCutSceneTime_11)),static_cast<int32_t>(offsetof(CameraSwitch_tB9EC45074FB9E0AB46A1D539728DD0C63679058C, ____introCutSceneDirector_12)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4089[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4084[3] = 
 {
-	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ____restartButton_4)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ____gameHasEnded_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4090[3] = 
+	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ____restartButton_4)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ____finalTimeline_5)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ____gameHasEnded_6)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4085[3] = 
 {
 	static_cast<int32_t>(offsetof(InGameTrigger_t5B7215B5D3CAFAE4240D5E63871974891B5DAEEC, ____transportShip_4)),static_cast<int32_t>(offsetof(InGameTrigger_t5B7215B5D3CAFAE4240D5E63871974891B5DAEEC, ____inGameDirector_5)),static_cast<int32_t>(offsetof(InGameTrigger_t5B7215B5D3CAFAE4240D5E63871974891B5DAEEC, ____hasTriggered_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4091[17] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4086[17] = 
 {
 	static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____defaultForwardSpeed_4)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____speedChange_5)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____minSpeed_6)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____maxSpeed_7)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____pitchSpeed_8)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____yawSpeed_9)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____rollSpeed_10)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____maxPitchAngle_11)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____introCutSceneTime_12)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____introCutSceneDirector_13)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____introCutSceneCam_14)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____currentSpeed_15)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____pitch_16)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____yaw_17)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____roll_18)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ____canControlShip_19)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___rb_20)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4092[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4087[1] = 
 {
 	static_cast<int32_t>(offsetof(TimelineChain_tAB499EB8E88C6E1EB815E97EEF073020090C7E7D, ____nextTimeline_4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4094[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4088[5] = 
+{
+	static_cast<int32_t>(offsetof(VcamLayerController_t95EE594B670721E8B08A21F87998A4D3A4157D0F, ____mainCamera_4)),static_cast<int32_t>(offsetof(VcamLayerController_t95EE594B670721E8B08A21F87998A4D3A4157D0F, ____exteriorVcam_5)),static_cast<int32_t>(offsetof(VcamLayerController_t95EE594B670721E8B08A21F87998A4D3A4157D0F, ____interiorVcam_6)),static_cast<int32_t>(offsetof(VcamLayerController_t95EE594B670721E8B08A21F87998A4D3A4157D0F, ____cockpitRoot_7)),static_cast<int32_t>(offsetof(VcamLayerController_t95EE594B670721E8B08A21F87998A4D3A4157D0F, ____isInteriorView_8)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4090[3] = 
+{
+	static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_nTag_0)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_aValue_1)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___elist_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4095[3] = 
 {
 	static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___IsTextualNodeBitmap_0)),static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___CanReadContentAsBitmap_1)),static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___HasValueBitmap_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4099[4] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4100[4] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,};

@@ -286,6 +286,7 @@
 "Assets/Scripts/InGameTrigger.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/TimelineChain.cs"
+"Assets/Scripts/VcamLayerController.cs"
 -langversion:9.0
 /deterministic
 /optimize+
